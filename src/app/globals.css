@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300&family=DM+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+:root {
+  --blue: #0055FF;
+  --blue-dark: #0044CC;
+  --blue-dim: rgba(0, 85, 255, 0.08);
+  --blue-glow: rgba(0, 85, 255, 0.18);
+  --bg: #F0EFE9;
+  --surface: #FAFAF8;
+  --text: #0F172A;
+  --text2: #475569;
+  --text3: #94A3B8;
+  --border: rgba(15, 23, 42, 0.07);
+  --border2: rgba(15, 23, 42, 0.12);
+  --green: #10B981;
+  --amber: #F59E0B;
+  --red: #EF4444;
+  --mono: 'DM Mono', monospace;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 40px rgba(15, 23, 42, 0.06);
+  }
+
+  .grid-bg {
+    background-image:
+      radial-gradient(circle at top left, rgba(0, 85, 255, 0.12), transparent 50%),
+      radial-gradient(circle at bottom right, rgba(15, 23, 42, 0.08), transparent 50%);
+  }
+
+  .primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 150ms ease;
+    background-color: var(--blue);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 24px var(--blue-glow);
+    outline: none;
+    text-decoration: none;
+  }
+
+  .primary-btn:hover {
+    background-color: var(--blue-dark);
+    box-shadow: 0 12px 32px rgba(0, 68, 204, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .primary-btn:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  .secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    transition: all 150ms ease;
+    background-color: white;
+    border: 1px solid var(--border2);
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+  }
+
+  .secondary-btn:hover {
+    border-color: var(--text);
+    transform: translateY(-1px);
+  }
+
+  .secondary-btn:focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 2px;
+  }
+
+  .mono {
+    font-family: var(--mono);
+  }
+}
